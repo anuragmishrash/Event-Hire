@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: event-hire-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false # You will need to manually set this in the Render dashboard for security
+      - key: FRONTEND_URL
+        sync: false # You will need to manually set this in the Render dashboard after Vercel deployment
